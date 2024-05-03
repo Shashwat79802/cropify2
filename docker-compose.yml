@@ -1,0 +1,45 @@
+services:
+
+  # mysql_db:
+  #   image: mysql:5.7
+  #   container_name: cropify3
+  #   ports:
+  #     - "3306:3306"
+  #   networks:
+  #     - cropify-network
+  #   environment:
+  #     MYSQL_ROOT_PASSWORD: shashwat79802
+  #     MYSQL_DATABASE: forum_db
+  #     MYSQL_PASSWORD: shashwat79802
+  #   volumes:
+  #     - ./init.sql:/docker-entrypoint-initdb.d/init.sql
+  #   depends_on:
+  #     - cropify
+
+  cropify:
+    build:
+      context: ./Cropify
+      dockerfile: Dockerfile
+    container_name: cropify
+    ports:
+      - "6000:6000"
+    networks:
+      - cropify-network
+
+  forum:
+    build:
+      context: ./Forum
+      dockerfile: Dockerfile
+    container_name: forum
+    ports:
+      - "5000:5000"
+    networks:
+      - cropify-network
+    depends_on:
+      - cropify
+
+
+networks:
+  cropify-network:
+    driver: bridge
+    external: true
