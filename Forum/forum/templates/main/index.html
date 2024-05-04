@@ -68,7 +68,8 @@
             </div>
 
             {% for thread in threads.items %}
-                <div class="question  p-4 bg-white mb-4 shadow-sm">
+                <div class="question p-4 mb-4 shadow-sm" style="border: 1px solid #b07946;
+                background-color: rgba(239, 228, 212, 0.5); padding: 1rem;">
                     <div class="question-header">
                         <a href="{{ url_for("threads.show", category_slug=thread.category.slug, thread_slug=thread.slug) }}"
                            class="question-title">
@@ -117,7 +118,7 @@
 
             {% if threads.items | length == 0  %}
                 <div class="p-4 text-center">
-                    <h3 class="">There are not questions yet asked... </h3>
+                    <h4 class="ft-3">Oops - no queries asked yet!! </h4>
                     <img src="{{ url_for("static", filename="images/checklist.svg") }}" width="200"/>
                 </div>
             {% endif %}

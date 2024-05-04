@@ -144,7 +144,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 
 	<style>
 		header {
-			background-color: rgba(30, 30, 30, 1);
+			background-color: #fff;
 			margin-top: 0rem;
 			display: block;
 
@@ -155,10 +155,10 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 <body>
 
 	<!-- Navigation -->
-	<nav class="navbar navbar-expand-lg navbar-dark bg-dark static-top" style="background-color: #1C00ff00;">
+	<!-- <nav class="navbar navbar-expand-lg navbar-dark bg-dark static-top" style="background-color: rgba(239, 228, 212, 0.45) !important;">
 		<div class="container">
 			<a class="navbar-brand" href="{{ url_for('home') }}">
-				<img src="{{ url_for('static', filename='images/logo.jpg') }}" style="width: 90px; height: 55px" alt="">
+				<img src="{{ url_for('static', filename='images/logo.png') }}" style="width: 100%; height: 55px" alt="">
 			</a>
 			<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive"
 				aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
@@ -172,18 +172,57 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 						</a>
 					</li>
 					<li class="nav-item">
-						<a class="nav-link" href="{{ url_for('crop_recommend') }}">Crop</a>
+						<a class="nav-link" href="{{ url_for('crop_recommend') }}">Crops
+							<span class="sr-only">(current)</span>
+						</a>
 					</li>
 					<li class="nav-item">
-						<a class="nav-link" href="{{ url_for('fertilizer_recommendation') }}">Fertilizer</a>
+						<a class="nav-link" href="{{ url_for('fertilizer_recommendation') }}">Fertilizers
+							<span class="sr-only">(current)</span>
+						</a>
 					</li>
 					<li class="nav-item">
-						<a class="nav-link" href="{{ url_for('disease_prediction') }}">Disease</a>
+						<a class="nav-link" href="{{ url_for('disease_prediction') }}">Diseases
+							<span class="sr-only">(current)</span>
+						</a>
+					</li>
+				</ul>
+			</div>
+		</div>
+	</nav> -->
+
+	<nav class="navbar navbar-expand-lg navbar-dark bg-dark static-top" style="background-color: rgba(239, 228, 212, 0.45) !important;">
+		<div class="container">
+			<a class="navbar-brand" href="{{ url_for('home') }}">
+				<img src="{{ url_for('static', filename='images/logo.png') }}" style="width: 100%; height: 55px" alt="">
+			</a>
+			<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive"
+				aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+				<span class="navbar-toggler-icon"></span>
+			</button>
+			<div class="collapse navbar-collapse" id="navbarResponsive">
+				<ul class="navbar-nav ml-auto">
+					<li class="nav-item">
+						<a class="nav-link" href="{{ url_for('home') }}">Home</a>
+					</li>
+					<li class="nav-item">
+						<a class="nav-link" href="{{ url_for('crop_recommend') }}">Crops</a>
+					</li>
+					<li class="nav-item">
+						<a class="nav-link" href="{{ url_for('fertilizer_recommendation') }}">Fertilizers</a>
+					</li>
+					<li class="nav-item">
+						<a class="nav-link" href="{{ url_for('disease_prediction') }}">Diseases</a>
+					</li>
+					<li class="nav-item">
+						<a class="nav-link" href="http://0.0.0.0:5000/">Forums</a>
+
 					</li>
 				</ul>
 			</div>
 		</div>
 	</nav>
+	
 
 
 
@@ -196,26 +235,17 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 			<!-- logo -->
 			<h2 class="logo2 text-center">
 				<a href="{{ url_for('home') }}">
-					Harvestify
+					Cropify
 				</a>
 			</h2>
 			<!-- //logo -->
 			<!-- address -->
-			<div class="contact-left-footer mt-4">
-
-
-
-
-
-				<!-- <a href="community.html">Community</a> -->
-				</p>
-			</div>
 			<div class="w3l-copy text-center">
-				<p class="text-da">An Environmental Intelligence Startup<br> </p>
+				<p class="text-da" style="color:#efe4d4 !important">An initiative to save Earth<3<br> </p>
 			</div>
 			<p class="homelogo">
-			<p>Made with ❤️ by Atharva</p>
-			<p>&copy; Copyright 2022 Atharva Ingle</p>
+			<p style="color:#efe4d4 !important">Made with ❤️ by team_name</p>
+			<p style="color:#efe4d4 !important">&copy; Copyright 2022 copyright_owner</p>
 			
 		</div>
 	</footer>

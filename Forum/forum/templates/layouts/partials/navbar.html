@@ -1,5 +1,7 @@
-<nav class="navbar navbar-expand-lg navbar-light shadow-sm" style="background-color: white;">
-  <a class="navbar-brand" href="{{ url_for('main.index') }}">Cropify Forum</a>
+<nav class="navbar navbar-expand-lg navbar-light shadow-sm" style="background-color: rgba(239, 228, 212, 0.45) !important;;">
+  <a class="navbar-brand" href="http://172.18.0.2:5000/">
+    <img src="{{ url_for("static", filename="images/logo.png") }}" style="width: 100%; height: 55px" alt="">
+  </a>
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarColor03" aria-controls="navbarColor03" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
   </button>
@@ -7,7 +9,7 @@
   <div class="collapse navbar-collapse" id="navbarColor03">
     <ul class="navbar-nav mr-auto">
       <li class="nav-item  dropdown">
-        <a class="nav-link dropdown-toggle" href="#" id="categories-dropdown" data-toggle="dropdown">Categories <span class="sr-only">(current)</span></a>
+        <a class="nav-link dropdown-toggle" href="#" id="categories-dropdown" data-toggle="dropdown" style="color: #151618 !important">Categories <span class="sr-only">(current)</span></a>
         <div class="dropdown-menu dropdown-menu-left">
           {% for category in app_categories %}
           <a class="dropdown-item" href="{{  url_for('threads.category_threads', category_slug=category.slug) }}">
@@ -16,38 +18,36 @@
           {% endfor %}
         </div>
       </li>
-      <li class="nav-item">
-        <a class="nav-link" href="{{ url_for('main.about') }}">About us</a>
-      </li>
+
     </ul>
     <ul class="navbar-nav ml-auto">
       {% if current_user.is_authenticated %}
       <li class="nav-item">
-        <a class="nav-link" href="{{ url_for('threads.create') }}">New thread</a>
+        <a class="nav-link" href="{{ url_for('threads.create') }}" style="color: #151618 !important">New thread</a>
       </li>
       <li class="nav-item dropdown">
         <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-          <avatar :size="20" class="rounded-circle"></avatar>
+          Profile
         </a>
         <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
-          <a class="dropdown-item" href="#">Action</a>
-          <a class="dropdown-item" href="{{  url_for('settings.index') }}">
+          <a class="dropdown-item" href="#" style="color: #151618 !important">Action</a>
+          <a class="dropdown-item" href="{{  url_for('settings.index') }}" style="color: #151618 !important">
             <i class="la la-cogs"></i>
             Settings
           </a>
           <div class="dropdown-divider"></div>
           <form method="POST" action="{{ url_for("auth.logout") }}">
               <input type="hidden" name="csrf_token" value="{{ csrf_token() }}">
-              <button class="btn btn-white" type="submit">Logout</button>
+              <button class="btn btn-white" type="submit" style="color: #151618 !important">Logout</button>
           </form>
         </div>
       </li>
       {% else %}
       <li class="nav-item pr-2">
-        <a class="nav-link" href="{{ url_for('auth.login') }}">Login</a>
+        <a class="nav-link" href="{{ url_for('auth.login') }}" style="color: #151618 !important">Login</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="{{ url_for('auth.register') }}">Register</a>
+        <a class="nav-link" href="{{ url_for('auth.register') }}" style="color: #151618 !important">Register</a>
       </li>
       {% endif %}
     </ul>

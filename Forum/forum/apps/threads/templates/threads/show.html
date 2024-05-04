@@ -1,10 +1,10 @@
 {% extends "layouts/app.html" %}
 
 {% block content %}
-    <div class="container question">
-        <div class="row my-4">
+    <div class="container" style="justify-content: center; align-items: center;">
+        <div class="row my-4" style="justify-content: center; align-items: center;">
             <div class="col-sm-12 col-lg-9 ">
-                <div class="bg-white shadow-sm p-4 " style="border-radius: 5px">
+                <div class="shadow-sm p-4 " style="border-radius: 5px; background-color: #efe4d4; border: 1px #b07946;">
                     <div class="d-flex justify-content-between align-items-center">
                         <h3>{{  thread.title }}</h3>
                         {% if current_user.is_authenticated and thread.is_owner(current_user) %}
